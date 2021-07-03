@@ -72,9 +72,6 @@ local function FilterString(S)
         end
     end
     RS = string.gsub(RS, LPName, Config.ProtectedName)
-    if S ~= RS then
-        print(RS)
-    end
     return RS
 end
 
