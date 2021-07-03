@@ -101,3 +101,16 @@ if Config.UseAggressiveFiltering then
         end
     end)
 end
+
+local Scroller = game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatChannelParentFrame["Frame_MessageLogDisplay"].Scroller
+for I,V in pairs(Scroller:GetDescendants()) do
+    if (IsA(V, "TextLabel")) then
+        V.ZIndex = 2
+    end
+end
+
+Scroller.DescendantAdded:Connect(function(V)
+    if (IsA(V, "TextLabel")) then
+        V.ZIndex = 2
+    end
+end)
